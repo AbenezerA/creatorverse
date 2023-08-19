@@ -1,42 +1,47 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  margin: 0;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.layout {
+  /* width: 100%;
+  background-color: rebeccapurple;  */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.flex-cont-row {
+  display: flex;
+  flex-direction: row;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.flex-cont-col {
+  display: flex;
+  flex-direction: column;
 }
 
-.card {
-  padding: 2em;
+.layout-header {
+  height: 600px;
+  background-image: url('src/assets/space_shot.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  justify-content: center;
+  border-bottom: 2px solid grey;
 }
 
-.read-the-docs {
-  color: #888;
+.layout-title {
+  font-size: 4rem;
+}
+
+.layout-btn-cont {
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.layout-btn {
+  width: 350px;
+  font-weight: bold;
+}
+
+.creators-cont {
+  min-height: 500px;
 }
