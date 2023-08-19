@@ -1,10 +1,18 @@
 import { React, useEffect, useState } from 'react'
 
-const Creator = () => {
+const Creator = (props) => {
     return(
-        <article className='creator-card'>
-            I'm a card!
-        </article>
+        <div className='creator-card' style={{backgroundImage: `url(${props.imageURL})`}}>
+            <article className='creator-card-sub'>
+                <h3 className='creator-card-name'>{props.name}</h3>
+                <a className='creator-card-link' href={props.youtubeURL}>YouTube</a>
+                <a className='creator-card-link' href={props.twitterURL}>Twitter</a>
+                <a className='creator-card-link' href={props.instagramURL}>Instagram</a>
+                <div className='creator-card-desc-cont'>
+                    <p className='creator-card-desc'>{props.desc}</p>
+                </div>
+            </article>
+        </div>
     )
 }
 

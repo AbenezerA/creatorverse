@@ -4,11 +4,6 @@
   text-align: center;
 }
 
-.layout {
-  /* width: 100%;
-  background-color: rebeccapurple;  */
-}
-
 .flex-cont-row {
   display: flex;
   flex-direction: row;
@@ -44,4 +39,36 @@
 
 .creators-cont {
   min-height: 500px;
+}
+
+.creator-card {
+  width: 35%;
+  height: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.creator-card-sub {
+  background-color: transparent;
+  height: 100%;
+  padding: 10px;
+  margin: 0 auto;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.75));
+}
+
+.creator-card-desc-cont {
+  /* background-color: blue; */
+  height: 50%;
+  width: 100%;
+}
+
+.creator-card-desc {
+  /* background-color: brown; */
+  font-size: 0.8em;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
