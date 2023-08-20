@@ -8,12 +8,13 @@ const Layout = () => {
             <header className="layout-header flex-cont-col">
                 <h1 className="layout-title">CREATORVERSE</h1>
                 <div className="layout-btn-cont flex-cont-row">
-                    <button className="layout-btn">VIEW ALL CREATORS</button>
-                    <button className="layout-btn">ADD A CREATOR</button>
+                    <Link to="/"><button className="layout-btn">VIEW ALL CREATORS</button></Link>
+                    <Link to="/new"><button className="layout-btn">ADD A CREATOR</button></Link>
                 </div>
             </header>
-
-            <Outlet />
+            <main className="layout-main">
+                <Outlet />
+            </main>
         </div>
     );
 };

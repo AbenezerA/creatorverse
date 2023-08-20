@@ -9,8 +9,8 @@ const ShowCreators = () => {
             const {data} = await supabase
             .from('creators')
             .select()
-            .order("created_at", {ascending: false})
-            console.log("fetching...", data)
+            .order("created_at", {ascending: true})
+            
             setCreators(data);
         }
 
@@ -19,17 +19,14 @@ const ShowCreators = () => {
 
     return(
         <div className="creators-cont">
-            <h2>Here are all your favorite creators!</h2>
-            <div className='creators-cont-sub'>
-                {
-                creators && creators.length > 0 ?
-                    creators.map((creator, index) => 
-                        <Creator key={index} id={creator.id} name={creator.name} desc={creator.description} imageURL={creator.imageURL} twitterURL={creator.twitterURL} youtubeURL={creator.youtubeURL} instagramURL={creator.instagramURL}></Creator>
-                    )
-                : null
+            {
+            creators && creators.length > 0 ?
+                creators.map((creator, index) => 
+                    <Creator key={index} id={creator.id} name={creator.name} desc={creator.description} imageURL={creator.imageURL} twitterURL={creator.twitterURL} youtubeURL={creator.youtubeURL} instagramURL={creator.instagramURL}></Creator>
+                )
+            : <h2>No creators yet!😞</h2>
 
-                } 
-            </div>
+            } 
         </div>
     )
 }
