@@ -19,7 +19,7 @@ const ViewCreator = () => {
             .select()
             .eq("id", id)
             
-            console.log(data);
+            // console.log(data);
             if (data[0]) {
               setCreator(data[0]);  
             }         

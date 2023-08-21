@@ -10,7 +10,7 @@ const ShowCreators = () => {
             .from('creators')
             .select()
             .order("created_at", {ascending: true})
-            
+
             setCreators(data);
         }
 
@@ -24,7 +24,7 @@ const ShowCreators = () => {
                 creators.map((creator, index) => 
                     <Creator key={index} id={creator.id} name={creator.name} desc={creator.description} imageURL={creator.imageURL} twitterURL={creator.twitterURL} youtubeURL={creator.youtubeURL} instagramURL={creator.instagramURL}></Creator>
                 )
-            : <h2>No creators yet!😞</h2>
+            : <h2>No creators yet! No worries, click on 'Add A Creator' to make your own creator!</h2>
 
             } 
         </div>

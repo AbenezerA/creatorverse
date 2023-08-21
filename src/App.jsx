@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import './App.css'
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import './App.css'
+
 import Layout from "./pages/Layout"
 import ShowCreators from './pages/ShowCreators'
 import ViewCreator from './pages/ViewCreator'

@@ -89,7 +89,8 @@
 .creator-card-name {
   margin-bottom: 5px;
   text-align: left;
-  color: #5185b4
+  color: #5185b4;
+  text-transform: uppercase;
 }
 
 .creator-card-links {
