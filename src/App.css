@@ -155,6 +155,7 @@
   margin: 5px;
   border: 2px solid transparent;
   text-align: left;
+  width: 400px;
 }
 .creator-link-btn:hover {
   border: 2px solid #5185b4;
@@ -169,4 +170,18 @@
 
 .delete-btn {
   background-color: #e85d59;
+}
+
+.add-creator {
+  text-align: left;
+  margin-top: 70px;
+}
+
+.add-creator p {
+  font-size: 0.7rem;
+  margin-bottom: 5px;
+}
+
+.add-creator h2 {
+  margin-bottom: 10px;
 }

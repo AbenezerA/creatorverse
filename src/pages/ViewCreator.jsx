@@ -7,8 +7,8 @@ const ViewCreator = () => {
     const defaultCreator = {
         id: "-1",
         name: "FirstName LastName",
-        imageURL: "#",
-        description: "This creator doesn't exist! Click on \'Add A Creator\' to create a creator!"
+        imageURL: "https://clipart-library.com/images/5TRraz5jc.jpg",
+        description: "This creator doesn't exist! Click on \'Add A Creator\' to enter a new creator or \'View All Creators\' to see previously created ones!"
     }
     const [creator, setCreator] = useState(defaultCreator);
 
@@ -27,6 +27,23 @@ const ViewCreator = () => {
         fetchData();
     }, []);
 
+    const deleteCreator = async (event) => {
+        event.preventDefault();
+
+        const { data, error } = await supabase
+          .from('creators')
+          .delete()
+          .eq('id', id);
+    
+        if (error) {
+          console.error('Error deleting row:', error);
+        } else {
+          console.log('Row deleted successfully:', data);
+        }
+        window.location = "/";
+
+      }
+
     return(
         <div className="view-creator">
             <div className="view-creator-image">
@@ -35,14 +52,18 @@ const ViewCreator = () => {
             <div className='view-creator-desc'>
                 <h2 className='creator-card-name'>{creator.name}</h2>
                 <p>{creator.description}</p>
-                {creator.youtubeURL ? <button className='creator-link-btn'><span className='fa fa-youtube-play'></span> @{creator.youtubeURL}</button> : null}
-                {creator.twitterURL ? <button className='creator-link-btn'><span className='fa fa-twitter'></span> @{creator.twitterURL}</button> : null}
-                {creator.instagramURL ? <button className='creator-link-btn'><span className='fa fa-instagram'></span> @{creator.instagramURL}</button> : null}
+                {creator.youtubeURL ? <Link to={`https://www.youtube.com/@${creator.youtubeURL}`}><button className='creator-link-btn'><span className='fa fa-youtube-play'></span> @{creator.youtubeURL}</button></Link> : null}
+                {creator.twitterURL ? <Link to={`https://www.twitter.com/${creator.twitterURL}`}><button className='creator-link-btn'><span className='fa fa-twitter'></span> @{creator.twitterURL}</button></Link> : null}
+                {creator.instagramURL ? <Link to={`https://www.instagram.com/${creator.instagramURL}`}><button className='creator-link-btn'><span className='fa fa-instagram'></span> @{creator.instagramURL}</button></Link> : null}
             </div>
-            <div className='view-creator-btns flex-cont-row'>
-                <Link to={`/edit/${creator.id}`}><button className='layout-btn'>EDIT</button></Link>
-                <button className='layout-btn delete-btn'>DELETE</button>
-            </div> 
+            { creator.id != "-1" ?
+                <div className='view-creator-btns flex-cont-row'>
+                    <Link to={`/edit/${creator.id}`}><button className='layout-btn'>EDIT</button></Link>
+                    <button className='layout-btn delete-btn' onClick={deleteCreator}>DELETE</button>
+                </div> 
+                : null
+            }
+            
         </div>
     )
 }
