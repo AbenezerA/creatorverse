@@ -9,7 +9,7 @@ const Creator = (props) => {
                     <h3 className='creator-card-name'>{props.name}</h3>
                     <div className='creator-card-links flex-cont-row'>
                         {props.youtubeURL ?
-                            <a className='creator-card-link fa fa-youtube-play' href={`https://www.youtube.com/${props.youtubeURL}`}></a> : null
+                            <a className='creator-card-link fa fa-youtube-play' href={`https://www.youtube.com/@${props.youtubeURL}`}></a> : null
                         }
                         {props.twitterURL ?
                             <a className='creator-card-link fa fa-twitter' href={`https://www.twitter.com/${props.twitterURL}`}></a> : null
