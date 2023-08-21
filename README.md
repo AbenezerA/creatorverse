@@ -35,7 +35,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-👉🏿<img src='./src/assets/gifwalkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./src/assets/gifwalkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -50,7 +50,7 @@ I found it challenging to implement the interactive buttons in the detailed view
 
 ## License
 
-Copyright [👉🏿 2023] [👉🏿 Abenezer Amanuel]
+Copyright [2023] [Abenezer Amanuel]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
